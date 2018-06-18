@@ -5,7 +5,7 @@ import './assets/css/ReactCollapse.css';
 class ReactCollapse extends Component {
   render() {
     return (
-      <div>
+      <div className={'ReactCollapse'}>
           <img src={logo} alt="logo" />
       </div>
     );
