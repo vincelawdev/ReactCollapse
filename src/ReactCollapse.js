@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames'
 import './assets/css/ReactCollapse.css';
 
 class ReactCollapse extends Component {
@@ -13,10 +14,18 @@ class ReactCollapse extends Component {
         return (
             <div className={'ReactCollapse'}>
                 <h3 className={'ReactCollapseHeading'}>{content.title}</h3>
-                <div className={'ReactCollapseSlides'}>
+                <div className={classnames('ReactCollapseSlides')}>
                     {content.content.map((slide, slideIndex) => {
-
-                        return <div className={'ReactCollapseSlide'} key={slideIndex}>{slideIndex}</div>
+                        return (
+                            <div className={classnames('ReactCollapseSlide', {'active': this.state.activeSlide === slideIndex})} key={slideIndex}>
+                                {slide.hasOwnProperty('thumbnail') &&
+                                    <p className={'ReactCollapseSlideDescription'}>
+                                        <img src={require(`./assets/images/${slide.thumbnail}`)} className={'ReactCollapseSlideImage'} alt={''} />
+                                        <span dangerouslySetInnerHTML={{__html: slide.description}}></span>
+                                    </p>
+                                }
+                            </div>
+                        )
                     })}
                 </div>
             </div>

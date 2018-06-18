@@ -24,4 +24,25 @@
     .ReactCollapse .ReactCollapseSlides .ReactCollapseSlide {
       margin: 0;
       padding: 15px 30px;
-      display: none; }
+      overflow: hidden;
+      display: none;
+      border-bottom: 1px solid #E6E7DF; }
+      .ReactCollapse .ReactCollapseSlides .ReactCollapseSlide.active {
+        display: block; }
+      .ReactCollapse .ReactCollapseSlides .ReactCollapseSlide .ReactCollapseSlideImage {
+        width: 20%;
+        min-width: 100px;
+        max-width: 300px;
+        height: auto;
+        margin: 0 30px 0 0;
+        padding: 0;
+        float: left; }
+      .ReactCollapse .ReactCollapseSlides .ReactCollapseSlide .ReactCollapseSlideDescription {
+        margin: 0;
+        padding: 0;
+        display: block;
+        font-family: Verdana;
+        font-size: 12px;
+        line-height: 14px;
+        font-weight: normal;
+        color: #000000; }
