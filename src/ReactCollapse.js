@@ -18,12 +18,12 @@ class ReactCollapse extends Component {
                     {content.content.map((slide, slideIndex) => {
                         return (
                             <div className={classnames('ReactCollapseSlide', {'active': this.state.activeSlide === slideIndex})} key={slideIndex}>
-                                {slide.hasOwnProperty('thumbnail') &&
-                                    <p className={'ReactCollapseSlideDescription'}>
+                                <p className={'ReactCollapseSlideDescription'}>
+                                    {slide.hasOwnProperty('thumbnail') &&
                                         <img src={require(`./assets/images/${slide.thumbnail}`)} className={'ReactCollapseSlideImage'} alt={''} />
-                                        <span dangerouslySetInnerHTML={{__html: slide.description}}></span>
-                                    </p>
-                                }
+                                    }
+                                    <span dangerouslySetInnerHTML={{__html: slide.description}}></span>
+                                </p>
                             </div>
                         )
                     })}
