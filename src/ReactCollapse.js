@@ -13,6 +13,20 @@ class ReactCollapse extends Component {
         this.setState({slidesCollapsed: !this.state.slidesCollapsed});
     };
 
+    previous = () => {
+        const slides = this.props.content.content.length - 1;
+        const previousSlide = this.state.activeSlide - 1;
+
+        // select last slide if it is the first slide
+        if(previousSlide < 0) {
+            this.setState(Object.assign({}, this.state, {activeSlide: slides}));
+        }
+        // select previous slide if it not the first slide
+        else if(previousSlide >= 0) {
+            this.setState(Object.assign({}, this.state, {activeSlide: previousSlide}));
+        }
+    };
+
     next = () => {
         const slides = this.props.content.content.length - 1;
         const nextSlide = this.state.activeSlide + 1;
@@ -47,7 +61,7 @@ class ReactCollapse extends Component {
                         )
                     })}
                     <div className={'ReactCollapseSlideNav'}>
-                        <div className={'ReactCollapseSlideNavPrevious'}>Prev</div>
+                        <div className={'ReactCollapseSlideNavPrevious'} onClick={this.previous}>Prev</div>
                         <div className={'ReactCollapseSlideNavNext'} onClick={this.next}>Next</div>
                     </div>
                 </div>
