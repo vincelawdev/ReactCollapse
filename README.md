@@ -1,8 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This [React Collapse](http://www.vincelaw.com.au/reactcollapse) project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+You may view it at [http://www.vincelaw.com.au/reactcollapse](http://www.vincelaw.com.au/reactcollapse).
+
+## Installation
+
+### `npm install` or `yarn install`
+
+This will install the project.
 
 ## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start` or `yarn start`
 
