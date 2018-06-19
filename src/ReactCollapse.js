@@ -41,8 +41,27 @@ class ReactCollapse extends Component {
         }
     };
 
+    displayNextTitle = () => {
+        const content = this.props.content.content;
+        const slides = content.length - 1;
+        const nextSlide = this.state.activeSlide + 1;
+        let nextTitle = '';
+
+        // select next slide if it is not the last slide
+        if(nextSlide <= slides) {
+            nextTitle = content[nextSlide].title;
+        }
+        // select first slide if it is the last slide
+        else if(nextSlide > slides) {
+            nextTitle = content[0].title;
+        }
+
+        return nextTitle;
+    };
+
     render() {
         const { content } = this.props;
+        const nextTitle = this.displayNextTitle();
 
         return (
             <div className={classnames('ReactCollapse', {'collapsed': this.state.slidesCollapsed})}>
@@ -62,7 +81,7 @@ class ReactCollapse extends Component {
                     })}
                     <div className={'ReactCollapseSlideNav'}>
                         <div className={'ReactCollapseSlideNavPrevious'} onClick={this.previous}>Prev</div>
-                        <div className={'ReactCollapseSlideNavNext'} onClick={this.next}>Next</div>
+                        <div className={'ReactCollapseSlideNavNext'} onClick={this.next}>{nextTitle}</div>
                     </div>
                 </div>
             </div>

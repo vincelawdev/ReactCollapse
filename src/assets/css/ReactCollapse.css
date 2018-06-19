@@ -91,7 +91,7 @@
         .ReactCollapse .ReactCollapseSlides .ReactCollapseSlideNav .ReactCollapseSlideNavPrevious:before,
         .ReactCollapse .ReactCollapseSlides .ReactCollapseSlideNav .ReactCollapseSlideNavNext:before {
           position: absolute;
-          top: 11px;
+          top: 28%;
           width: 0;
           height: 0;
           border-style: solid;
