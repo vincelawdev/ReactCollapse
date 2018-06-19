@@ -4,7 +4,13 @@
   padding: 10px;
   display: block;
   box-sizing: border-box; }
+  .ReactCollapse.collapsed .ReactCollapseHeading:after {
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #458900 transparent; }
+  .ReactCollapse.collapsed .ReactCollapseSlides {
+    display: block; }
   .ReactCollapse .ReactCollapseHeading {
+    position: relative;
     margin: 0;
     padding: 15px 20px;
     display: block;
@@ -15,18 +21,31 @@
     font-size: 13px;
     line-height: 13px;
     font-weight: bold;
-    color: #000000; }
+    color: #000000;
+    cursor: pointer; }
+    .ReactCollapse .ReactCollapseHeading:after {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      width: 0;
+      height: 0;
+      border-width: 5px 5px 0 5px;
+      border-style: solid;
+      border-color: #458900 transparent transparent transparent;
+      content: ''; }
   .ReactCollapse .ReactCollapseSlides {
     margin: 0;
     padding: 0;
-    display: block;
+    display: none;
     background-color: #ffffff; }
     .ReactCollapse .ReactCollapseSlides .ReactCollapseSlide {
       margin: 0;
       padding: 15px 30px;
       overflow: hidden;
       display: none;
-      border-bottom: 1px solid #E6E7DF; }
+      border-bottom: 1px solid #E6E7DF;
+      border-left: 1px solid #E6E7DF;
+      border-right: 1px solid #E6E7DF; }
       .ReactCollapse .ReactCollapseSlides .ReactCollapseSlide.active {
         display: block; }
       .ReactCollapse .ReactCollapseSlides .ReactCollapseSlide .ReactCollapseSlideImage {

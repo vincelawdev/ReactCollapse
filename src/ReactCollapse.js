@@ -5,16 +5,21 @@ import './assets/css/ReactCollapse.css';
 
 class ReactCollapse extends Component {
     state = {
+        slidesCollapsed: true,
         activeSlide: 0
+    };
+
+    collapseToggle = () => {
+        this.setState({slidesCollapsed: !this.state.slidesCollapsed});
     };
 
     render() {
         const { content } = this.props;
 
         return (
-            <div className={'ReactCollapse'}>
-                <h3 className={'ReactCollapseHeading'}>{content.title}</h3>
-                <div className={classnames('ReactCollapseSlides')}>
+            <div className={classnames('ReactCollapse', {'collapsed': this.state.slidesCollapsed})}>
+                <h3 className={'ReactCollapseHeading'} onClick={this.collapseToggle}>{content.title}</h3>
+                <div className={'ReactCollapseSlides'}>
                     {content.content.map((slide, slideIndex) => {
                         return (
                             <div className={classnames('ReactCollapseSlide', {'active': this.state.activeSlide === slideIndex})} key={slideIndex}>
