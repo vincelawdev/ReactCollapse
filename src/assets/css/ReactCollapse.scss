@@ -87,5 +87,64 @@
                 color: #000000;
             }
         }
+
+        .ReactCollapseSlideNav {
+            width: 100%;
+            display: table;
+            border-bottom: 1px solid #E6E7DF;
+            border-left: 1px solid #E6E7DF;
+            border-right: 1px solid #E6E7DF;
+            box-sizing: border-box;
+
+            .ReactCollapseSlideNavPrevious,
+            .ReactCollapseSlideNavNext {
+                position: relative;
+                width: 50%;
+                margin: 0;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                display: table-cell;
+                vertical-align: middle;
+                font-family: Verdana;
+                font-size: 12px;
+                line-height: 12px;
+                font-weight: normal;
+                color: #588E1C;
+                text-decoration: underline;
+                cursor: pointer;
+
+                // triangles
+                &:before {
+                    position: absolute;
+                    top: 11px;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    content: '';
+                }
+            }
+
+            .ReactCollapseSlideNavPrevious {
+                padding-left: 60px;
+
+                // left triangle
+                &:before {
+                    left: 30px;
+                    border-width: 10px 10px 10px 0;
+                    border-color: transparent #458900 transparent transparent;
+                }
+            }
+
+            .ReactCollapseSlideNavNext {
+                padding-right: 60px;
+                text-align: right;
+
+                &:before {
+                    right: 30px;
+                    border-width: 10px 0 10px 10px;
+                    border-color: transparent transparent transparent #458900;
+                }
+            }
+        }
     }
 }

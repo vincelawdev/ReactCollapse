@@ -32,6 +32,10 @@ class ReactCollapse extends Component {
                             </div>
                         )
                     })}
+                    <div className={'ReactCollapseSlideNav'}>
+                        <div className={'ReactCollapseSlideNavPrevious'}>Prev</div>
+                        <div className={'ReactCollapseSlideNavNext'}>Next</div>
+                    </div>
                 </div>
             </div>
         );
